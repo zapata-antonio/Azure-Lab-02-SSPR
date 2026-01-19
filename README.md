@@ -3,50 +3,63 @@
 Repo: **Azure-Lab-02-SSPR**
 
 ## 🎯 Objetivo
-Reducir tickets de soporte habilitando **restablecimiento de contraseña de autoservicio (SSPR)** de forma segura, usando **doble verificación** (Email + Teléfono) y aplicándolo a un entorno de laboratorio con usuarios creados en bloque.
+Reducir tickets de soporte habilitando **SSPR (Self-Service Password Reset)** de forma segura para un **grupo piloto**, requiriendo **doble verificación** y validando el flujo real de restablecimiento.
 
 ---
 
-## 🛠️ Tareas realizadas
-1. Creación del grupo piloto **GRP_SSPR_Users**.
-2. Creación del usuario **usuario_1** y asignación al grupo.
-3. Configuración de SSPR (restablecimiento de contraseña) para usuarios del tenant.
-4. Habilitación de métodos de verificación: **Email (OTP)** + **Teléfono (SMS)**.
-5. **Validación**: prueba real del flujo de restablecimiento mostrando selección de método.
-6. (Extra “pro”) **Onboarding masivo** de usuarios mediante **CSV (Bulk create)**.
+## 🛠️ Alcance y configuración
+- **SSPR habilitado para:** *Seleccionado* → grupo **GRP_SSPR_Users**
+- **Métodos permitidos para SSPR:** **Email (OTP)** + **Teléfono móvil (SMS)**
+- **Número de métodos requeridos:** **2**
+- **Usuario de prueba:** `usuario_1` (miembro del grupo)
 
-> Nota: En este tenant, la habilitación de métodos para SSPR se gestiona desde **Métodos de autenticación (directivas)** (política convergente de Entra).
+> Nota: En este tenant, los métodos se habilitan desde **Métodos de autenticación (Directivas)** (política convergente de Microsoft Entra).
+
+---
+
+## ✅ Tareas realizadas
+1. Creación del grupo **GRP_SSPR_Users**.
+2. Creación de usuario de prueba `usuario_1` y asignación al grupo.
+3. Activación de **SSPR** en modo **Seleccionado** para el grupo piloto.
+4. Habilitación de métodos para SSPR: **Email (OTP)** y **SMS**.
+5. **Validación**: ejecución del flujo “He olvidado mi contraseña” para comprobar que se ofrecen los métodos configurados.
+6. (Extra) **Creación masiva** de usuarios mediante importación **CSV**.
 
 ---
 
 ## 📸 Evidencias
 
-### ✅ Evidencias principales (SSPR)
-**1) SSPR habilitado (Selected → grupo GRP_SSPR_Users):**  
-
+### 1) SSPR habilitado para grupo piloto (Selected)
 ![SSPR habilitado - grupo](images/01-sspr-grupo.png)
 
-- **Métodos habilitados (Directivas): OTP Email + SMS:** `images/02-authmethods-otp-email-sms.png`  
-- **Validación real (SSPR): selección de método Email/SMS en el reset:** `images/03-validacion-sspr-seleccion-metodo.png`
+### 2) Métodos permitidos (Directivas de Métodos de autenticación)
+> Email (OTP) + Teléfono móvil (SMS)
+![Métodos SSPR](images/02-sspr-metodos.png)
 
-### ⭐ Evidencias extra (Onboarding masivo con CSV)
-> Recomendación: **no hace falta captura de Excel**. Con una captura del **resultado de la importación** y/o de la **lista de usuarios creados** es suficiente y queda más limpio.
 
-- **Resultado de importación masiva (Bulk create):** `images/10-bulk-results.png`
-- **Usuarios creados en Entra:** `images/11-users-created.png`
+![Métodos SSPR](images/03-sspr-metodos.png)
+
+
+### 3) Validación real del flujo SSPR
+> Pantalla donde el usuario selecciona método (Email/SMS) durante el restablecimiento.
+![Validación SSPR](images/04-validacion-sspr-seleccion-metodo.png)
+
+### 4) Extra: onboarding masivo por CSV
+![Resultado importación masiva](images/10-bulk-results.png)
+![Usuarios creados en Entra](images/11-users-created.png)
 
 ---
 
 ## ✅ Checklist de verificación
-- [x] SSPR habilitado
-- [x] Se requieren **2 métodos** para el restablecimiento
-- [x] Métodos permitidos: **OTP de correo electrónico** + **SMS**
-- [x] Validación realizada: se muestra selección de método en el flujo real
-- [x] Usuario `usuario_1` creado y asignado al grupo (si aplica)
-- [ ] Métodos débiles deshabilitados (si aplica en el tenant)
+- [x] SSPR habilitado solo para grupo piloto
+- [x] Se requieren **2 métodos** para restablecer
+- [x] Métodos disponibles: **Email (OTP)** + **SMS**
+- [x] Validación realizada (flujo real muestra selección de método)
+- [x] Usuario de prueba incluido en el grupo
+- [x] (Extra) Importación masiva por CSV documentada
 
 ---
 
 ## 🗣️ Qué le diría al cliente / entrevista
-“SSPR mejora la productividad y reduce costes operativos al disminuir tickets de soporte, manteniendo seguridad con verificación fuerte.  
-Además, simulé un escenario real con **onboarding masivo por CSV**, habitual cuando se reciben altas en bloque, y validé el flujo de restablecimiento mostrando la selección de métodos configurados.”
+“Implementé SSPR para un **grupo piloto** con **doble verificación** (Email + SMS) para reducir tickets de soporte sin perder seguridad.
+Además, añadí un ejemplo de **onboarding masivo por CSV**, típico en entornos reales, y validé el flujo completo de restablecimiento.”
