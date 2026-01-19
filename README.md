@@ -33,7 +33,7 @@ Reducir tickets de soporte habilitando **SSPR (Self-Service Password Reset)** de
 ![SSPR habilitado - grupo](images/01-sspr-grupo.png)
 
 ### 2) Métodos permitidos (Directivas de Métodos de autenticación)
-> Email (OTP) + Teléfono móvil (SMS)
+Email (OTP) + Teléfono móvil (SMS)
 ![Métodos SSPR](images/02-sspr-metodos.png)
 
 
@@ -41,13 +41,21 @@ Reducir tickets de soporte habilitando **SSPR (Self-Service Password Reset)** de
 
 
 ### 3) Validación real del flujo SSPR
-> Pantalla donde el usuario selecciona método (Email/SMS) durante el restablecimiento.
+Pantalla donde el usuario selecciona método (Email/SMS) durante el restablecimiento.
 ![Validación SSPR](images/04-validacion-sspr-seleccion-metodo.png)
 
-### 4) Extra: onboarding masivo por CSV
-![Resultado importación masiva](images/CSV_usuarios.png)
-![Usuarios creados en Entra](images/11-users-created.png)
 
+### 4) Extra: onboarding masivo por CSV
+
+> Generación del CSV (Excel):**  
+
+![CSV Excel](images/CSV_usuarios.png)
+
+
+
+> Resultado en Entra (importación):**  
+
+![Resultado importación](images/11-users-created.png)
 ---
 
 ## ✅ Checklist de verificación
