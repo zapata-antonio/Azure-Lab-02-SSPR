@@ -45,7 +45,7 @@ Reducir tickets de soporte habilitando **SSPR (Self-Service Password Reset)** de
 ![Validación SSPR](images/04-validacion-sspr-seleccion-metodo.png)
 
 ### 4) Extra: onboarding masivo por CSV
-![Resultado importación masiva](images/10-bulk-results.png)
+![Resultado importación masiva](images/CSV_usuarios.png)
 ![Usuarios creados en Entra](images/11-users-created.png)
 
 ---
