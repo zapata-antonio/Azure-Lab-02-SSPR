@@ -22,7 +22,8 @@ Reducir tickets de soporte habilitando **restablecimiento de contraseña de auto
 ## 📸 Evidencias
 
 ### ✅ Evidencias principales (SSPR)
-**1) SSPR habilitado (Selected → grupo piloto):**  
+**1) SSPR habilitado (Selected → grupo GRP_SSPR_Users):**  
+
 ![SSPR habilitado - grupo](images/01-sspr-grupo.png)
 
 - **Métodos habilitados (Directivas): OTP Email + SMS:** `images/02-authmethods-otp-email-sms.png`  
