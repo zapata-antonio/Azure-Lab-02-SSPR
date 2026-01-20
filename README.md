@@ -1,4 +1,4 @@
-# Lab 02: Implementación de SSPR (Self-Service Password Reset)
+# 🧪Lab 02: Implementación de SSPR (Self-Service Password Reset)
 
 Repo: **Azure-Lab-02-SSPR**
 
