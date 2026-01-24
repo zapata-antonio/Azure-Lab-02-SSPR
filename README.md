@@ -18,7 +18,7 @@ Habilitar **Self-Service Password Reset (SSPR)** de forma segura para un grupo p
 - **Número de métodos requeridos:** **2**
 - **Usuario de prueba:** `usuario_1` (miembro del grupo)
 
-> Nota: En este tenant, la gestión de métodos se realiza desde **Métodos de autenticación (Directivas)** (enfoque convergente de Microsoft Entra).
+
 
 ---
 
